@@ -15,7 +15,7 @@ if (! empty(trim($matches[1]))) {
     $branch = $matches[1];
     $query = $matches[2];
 } else {
-    $branch = empty($_ENV['branch']) ? 'master' : $_ENV['branch'];
+    $branch = empty($_ENV['branch']) ? '5.6' : $_ENV['branch'];
 }
 
 $subtext = empty($_ENV['alfred_theme_subtext']) ? '0' : $_ENV['alfred_theme_subtext'];
@@ -58,7 +58,7 @@ if (empty($results)) {
 $urls = [];
 
 foreach ($results as $hit) {
-    $url = sprintf("https://laravel.com/docs/%s/%s", $branch, $hit['link']);
+    $url = sprintf("https://laravel.kr/docs/%s/%s", $branch, $hit['link']);
 
     if (in_array($url, $urls)) {
         continue;
